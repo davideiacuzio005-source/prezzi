@@ -6,10 +6,10 @@
 <title>Il tuo sito web su misura</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Caveat:wght@500&display=swap">
 <style>
-:root{--bg:#f6f3ee;--ink:#17201d;--muted:#5d6762;--forest:#1f3a32;--gold:#e8c796;--gold-d:#8a6a34;--c1:#f1efea;--c2:#f1e8d8;--c3:#e9ede6;--chip:#e6dccb;--line:#d9d3c7;--hero:#14201c;--hero-ink:#fff;--sage:#b9c9b0;--tick:#2f4d42;
+:root{--bg:#f6f3ee;--ink:#17201d;--muted:#5d6762;--forest:#1f3a32;--gold:#e8c796;--gold-d:#8a6a34;--c1:#f1efea;--c2:#f1e8d8;--c3:#e9ede6;--chip:#e6dccb;--line:#d9d3c7;--hero:#14201c;--hero-ink:#fff;--sage:#b9c9b0;--tick:#2f4d42;--card:#fff;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;--card:#141d19;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;--card:#141d19;color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Plus Jakarta Sans",system-ui,sans-serif}
@@ -22,20 +22,27 @@ h1{font-size:clamp(40px,7vw,76px);line-height:1;margin:0;font-weight:800;letter-
 h1 em{font-style:normal;color:var(--gold);display:block}
 .sub{font-size:clamp(18px,2.4vw,24px);margin:18px 0 0;font-weight:500}
 .rule{width:60px;height:2px;background:var(--gold);margin:26px 0}
-.btn{display:inline-block;background:var(--gold);color:#1b1a14;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none}
-.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-d);outline-offset:3px}
+.btn{display:inline-block;background:var(--gold);color:#1b1a14;padding:14px 26px;border-radius:999px;font:700 16px "Plus Jakarta Sans",system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold-d);outline-offset:3px}
+.theme{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;z-index:3;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 14px;font:600 13px "Plus Jakarta Sans",sans-serif;cursor:pointer}
 .mock{position:relative;min-height:290px}
 .laptop{background:#0d0d0d;border:6px solid #2a2a2a;border-radius:12px;aspect-ratio:16/10;overflow:hidden;position:relative;width:100%}
 .laptop::after{content:"";position:absolute;left:-8%;right:-8%;bottom:-18px;height:12px;background:#9a9a9a;border-radius:0 0 14px 14px}
-.scr{height:100%;padding:12%;background:radial-gradient(circle at 80% 60%,#c1442a 0 16%,#e2a13c 17% 24%,#3a2a1a 25% 100%);color:#fff;font-weight:700;font-size:clamp(12px,2vw,20px);line-height:1.2}
+.scr{height:100%;padding:12%;background:radial-gradient(circle at 80% 60%,#c1442a 0 16%,#e2a13c 17% 24%,#3a2a1a 25% 100%);color:#fff;font-weight:700;font-size:clamp(12px,2vw,20px);line-height:1.2;transition:filter .3s}
 .scr span{display:inline-block;margin-top:10px;font-size:11px;background:var(--gold);color:#222;padding:4px 10px;border-radius:99px}
 .phone{position:absolute;right:-4px;bottom:-30px;width:28%;aspect-ratio:9/18;background:#0d0d0d;border:4px solid #2a2a2a;border-radius:16px;overflow:hidden}
 .phone .scr{padding:12% 10%;font-size:clamp(8px,1.2vw,12px)}
+.themes{display:flex;gap:8px;margin-top:22px;align-items:center;font-size:13px;opacity:.9}
+.themes button{width:26px;height:26px;border-radius:50%;border:2px solid #fff;cursor:pointer}
 section{padding:56px 0}
 h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;letter-spacing:-.02em;line-height:1.1}
 .lead{color:var(--muted);margin:0 0 32px;max-width:60ch}
 .plans{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);align-items:stretch}
-.plan{border-radius:26px;padding:28px 24px;display:flex;flex-direction:column;background:var(--c1)}
+.plan{border-radius:26px;padding:28px 24px;display:flex;flex-direction:column;background:var(--c1);border:2px solid transparent;transition:transform .2s,border-color .2s}
+.plan:hover{transform:translateY(-4px)}
+.plan.sel{border-color:var(--gold-d)}
 .plan.b{background:var(--c2)}.plan.p{background:var(--c3)}
 .plan h3{font-size:26px;margin:0;font-weight:500;letter-spacing:-.01em}.plan h3 b{font-weight:800}
 .tag{color:var(--muted);margin:4px 0 18px}
@@ -52,34 +59,63 @@ h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;letter-spacing:-.02em;line-heig
 .nfc.gift{background:var(--sage);color:var(--ink)}
 .nfc b{font-size:30px;font-weight:800}
 .nfc span{font-weight:700;font-size:14px;letter-spacing:.04em}
+.pick{margin-top:14px;width:100%;background:var(--forest);color:#fff}
 .review{background:var(--forest);color:#fff;border-radius:30px;padding:40px 28px;display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:center}
 .review h2{color:#fff}
 .review p{opacity:.88;margin:10px 0}
 .stars{color:#f5c04a;font-size:30px;letter-spacing:4px}
-.cardviz{background:linear-gradient(135deg,#0e1b17,#24493e);border:1px solid rgba(255,255,255,.2);border-radius:20px;aspect-ratio:1.6;max-width:340px;justify-self:center;width:100%;padding:22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg)}
-.cardviz div{font-size:13px;opacity:.85}
-.cardviz strong{font-size:22px}
 .price25{display:inline-block;margin-top:8px;background:var(--gold);color:#1b1a14;border-radius:999px;padding:8px 18px;font-weight:800}
+.cardviz{background:linear-gradient(135deg,#0e1b17,#24493e);border:1px solid rgba(255,255,255,.2);border-radius:20px;aspect-ratio:1.6;max-width:340px;justify-self:center;width:100%;padding:22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg);cursor:pointer;color:#fff;font:inherit;text-align:left;transition:transform .3s}
+.cardviz:hover{transform:rotate(0) scale(1.03)}
+.cardviz div{font-size:13px;opacity:.85}
+.cardviz strong{font-size:22px;color:#f5c04a;letter-spacing:2px}
+.cardviz strong i{font-style:normal;color:rgba(255,255,255,.3);transition:color .2s}
+.cardviz strong i.on{color:#f5c04a}
+.cfg{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:32px 28px;display:grid;gap:32px;grid-template-columns:1.1fr .9fr}
+.opts{display:grid;gap:10px;margin:14px 0 22px}
+.opt{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;border:2px solid var(--line);border-radius:16px;cursor:pointer;font-weight:600;background:transparent;color:var(--ink);font-family:inherit;font-size:16px;text-align:left}
+.opt[aria-checked="true"]{border-color:var(--gold-d);background:var(--c2)}
+.opt small{font-weight:500;color:var(--muted)}
+.lbl{font-weight:700;display:block}
+.step{display:inline-flex;align-items:center;gap:14px;margin-top:8px}
+.step button{width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--ink);font-size:20px;cursor:pointer}
+.step output{min-width:28px;text-align:center;font-size:22px;font-weight:800}
+.sum{background:var(--hero);color:#fff;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.sum .row{display:flex;justify-content:space-between;gap:12px;font-size:15px;opacity:.9}
+.sum .tot{border-top:1px solid rgba(255,255,255,.25);padding-top:12px;font-size:17px;font-weight:700;opacity:1}
+.sum .big{font-size:44px;font-weight:800;letter-spacing:-.03em;color:var(--gold);line-height:1}
+.sum small{opacity:.7}
+.form{display:grid;gap:10px;margin-top:6px}
+.form input{padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#17201d;font:inherit}
+.msg{min-height:22px;font-size:14px;color:var(--gold)}
 .extras{display:grid;gap:0;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .extras div{padding:24px 20px 0 0}
 .extras div+div{padding-left:20px;border-left:1px solid var(--line)}
 .extras b{display:block}
 .extras span{color:var(--muted);font-size:14px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:24px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:10px 0 0;max-width:70ch}
 footer{background:var(--hero);color:#fff;border-radius:50% 50% 0 0/40px 40px 0 0;padding:64px 0 40px;text-align:center}
 .sig{font-family:"Caveat",cursive,serif;font-size:clamp(30px,5vw,46px);margin:0 0 22px;color:var(--gold)}
 footer p{margin:6px 0;opacity:.8}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
 @media(max-width:860px){
-.hero .wrap,.review{grid-template-columns:1fr}
+.hero .wrap,.review,.cfg{grid-template-columns:1fr}
 .plans{grid-template-columns:1fr}
 .extras{grid-template-columns:1fr}
 .extras div+div{border-left:0;border-top:1px solid var(--line);padding-left:0;margin-top:20px}
 .mock{margin-bottom:30px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <header class="hero">
+<button class="theme" id="theme" type="button" aria-label="Cambia tema">◐ Tema</button>
 <div class="wrap">
 <div>
 <p class="kicker">Creazione siti web</p>
@@ -88,92 +124,85 @@ footer p{margin:6px 0;opacity:.8}
 <div class="rule"></div>
 <p style="margin:0 0 26px;max-width:34ch">Scegli il pacchetto più adatto alla tua attività e porta il tuo locale online!</p>
 <a class="btn" href="#pacchetti">Scopri i pacchetti</a>
+<div class="themes">Prova lo stile: <button style="background:#c1442a" data-h="0" aria-label="Rosso"></button><button style="background:#2f6f8f" data-h="170" aria-label="Blu"></button><button style="background:#3d7a4f" data-h="260" aria-label="Verde"></button><button style="background:#8a4a9a" data-h="80" aria-label="Viola"></button></div>
 </div>
 <div class="mock" aria-hidden="true">
-<div class="laptop"><div class="scr">La buona pizza<br>è sempre una<br>buona idea.<br><span>Scopri il menù</span></div></div>
-<div class="phone"><div class="scr">La buona pizza è sempre una buona idea.</div></div>
+<div class="laptop"><div class="scr" data-scr>La buona pizza<br>è sempre una<br>buona idea.<br><span>Scopri il menù</span></div></div>
+<div class="phone"><div class="scr" data-scr>La buona pizza è sempre una buona idea.</div></div>
 </div>
 </div>
 </header>
  
 <main>
 <section id="pacchetti">
-<div class="wrap">
+<div class="wrap rv">
 <h2>Scegli il tuo pacchetto</h2>
 <p class="lead">Canone mensile semplice, con un piccolo costo di attivazione una tantum.</p>
-<div class="plans">
- 
-<article class="plan">
-<h3>SITO <b>STARTER</b></h3>
-<p class="tag">Il tuo punto di partenza online.</p>
-<div class="price">50<small>€</small></div>
-<div class="mese">al mese</div>
-<div class="act">+ attivazione di soli <b>100€</b></div>
-<hr>
-<ul>
-<li>Sito vetrina</li><li>Solo il logo</li><li>Numero di telefono della sede</li><li>Orari</li><li>Dove trovarci</li><li>Piccole manutenzioni senza possibilità di aggiunta.</li>
-</ul>
-<div class="limit">Massimo 2 richieste al mese</div>
-<div class="nfc"><span>NFC CARD</span><b>20€</b></div>
-</article>
- 
-<article class="plan b">
-<h3>SITO <b>BUSINESS</b></h3>
-<p class="tag">Più contenuti, più valore.</p>
-<div class="price">70<small>€</small></div>
-<div class="mese">al mese</div>
-<div class="act">+ attivazione di soli <b>200€</b></div>
-<hr>
-<ul>
-<li>Sito multi pagina</li><li>Fotografie</li><li>Menù</li><li>Contatti</li><li>Numero di telefono della sede</li><li>Orari</li><li>Dove trovarci</li><li>Profili social</li><li>Possibilità di fare piccole aggiunte come ad esempio promozioni o auguri di buona Pasqua ecc.</li>
-</ul>
-<div class="limit">Massimo 4 richieste al mese</div>
-<div class="nfc"><span>NFC CARD</span><b>15€</b></div>
-</article>
- 
-<article class="plan p">
-<h3>SITO <b>BUSINESS PLUS</b></h3>
-<p class="tag">Tutto quello che ti serve. E anche di più.</p>
-<div class="price">100<small>€</small></div>
-<div class="mese">al mese</div>
-<div class="act">+ attivazione di soli <b>300€</b></div>
-<hr>
-<ul>
-<li>Tutto il pacchetto Business + la sezione LAVORA CON NOI</li>
-<li>Menù digitale con codice QR da mettere su ogni tavolo.</li>
-<li>Possibilità di fare modifiche al sito anche di stile (Halloween, Natale ecc.). Attenzione: deve rimanere invariata però la struttura inizialmente concordata.</li>
-<li>Gestione online della chiusura cassa per avere una email con le varie chiusure.</li>
-</ul>
-<div class="limit">Massimo 6 richieste al mese</div>
-<div class="nfc gift"><span>NFC CARD<br>IN REGALO 🎁</span></div>
-</article>
- 
-</div>
+<div class="plans" id="plans"></div>
 </div>
 </section>
  
 <section style="padding-top:0">
-<div class="wrap">
+<div class="wrap rv">
 <div class="review">
 <div>
 <div class="stars" aria-label="5 stelle">★★★★★</div>
 <h2>La NFC card che raccoglie recensioni</h2>
 <p>I tuoi clienti avvicinano il telefono alla card e lasciano da soli la recensione Google a 5 stelle. Nessun passaggio in più: più recensioni, più fiducia, più clienti.</p>
-<p>Disponibile anche senza l'acquisto di un sito internet.</p>
+<p>Disponibile anche senza l’acquisto di un sito internet.</p>
 <span class="price25">NFC card: 25€</span>
 </div>
-<div class="cardviz" aria-hidden="true">
-<div>Lasciaci una recensione</div>
-<strong>★★★★★ · Google</strong>
+<button class="cardviz" id="nfcDemo" type="button" aria-label="Prova la card: avvicina il telefono">
+<div id="nfcTxt">Tocca la card per provarla</div>
+<strong id="nfcStars"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i> · Google</strong>
 <div>Avvicina il telefono</div>
+</button>
+</div>
+</div>
+</section>
+ 
+<section id="preventivo" style="padding-top:0">
+<div class="wrap rv">
+<h2>Calcola il tuo preventivo</h2>
+<p class="lead">Scegli il pacchetto e le NFC card: vedi subito quanto spendi.</p>
+<div class="cfg">
+<div>
+<span class="lbl">1. Pacchetto</span>
+<div class="opts" role="radiogroup" aria-label="Pacchetto" id="opts"></div>
+<span class="lbl">2. Numero di NFC card</span>
+<div class="step"><button type="button" id="minus" aria-label="Meno">−</button><output id="qty" aria-live="polite">0</output><button type="button" id="plus" aria-label="Più">+</button></div>
+</div>
+<div>
+<div class="sum" aria-live="polite">
+<div class="row"><span>Canone mensile</span><b id="sM">–</b></div>
+<div class="row"><span>Attivazione una tantum</span><b id="sA">–</b></div>
+<div class="row"><span>NFC card</span><b id="sN">–</b></div>
+<div class="row tot"><span>Da pagare subito</span><span id="sNow">–</span></div>
+<div class="big" id="sY">–</div>
+<small>stima primo anno (12 mesi). Dominio escluso, prezzo variabile.</small>
+</div>
+<div class="form">
+<input id="fn" placeholder="Il tuo nome" autocomplete="name" aria-label="Nome">
+<input id="fa" placeholder="Nome della tua attività" aria-label="Attività">
+<button class="btn" type="button" id="send">Richiedi questo preventivo</button>
+<button class="btn alt" type="button" id="copy">Copia riepilogo</button>
+<div class="msg" id="msg" role="status"></div>
+</div>
 </div>
 </div>
 </div>
 </section>
  
 <section style="padding-top:0">
-<div class="wrap">
-<div class="extras">
+<div class="wrap rv">
+<h2>Domande frequenti</h2>
+<div style="margin-top:18px">
+<details><summary>Cosa sono le “richieste al mese”?</summary><p>Sono le modifiche o aggiunte che puoi chiederci ogni mese: 2 con Starter, 4 con Business, 6 con Business Plus.</p></details>
+<details><summary>Posso cambiare pacchetto più avanti?</summary><p>Sì, scrivici e passiamo al pacchetto più adatto alla tua attività.</p></details>
+<details><summary>Cosa richiede un preventivo separato?</summary><p>Le modifiche strutturali (cambio layout, restyling completo) e le nuove pagine o funzionalità (blog, e-commerce, prenotazioni).</p></details>
+<details><summary>Il dominio è incluso?</summary><p>No, il prezzo varia in base al dominio scelto.</p></details>
+</div>
+<div class="extras" style="margin-top:32px">
 <div><b>Modifiche strutturali</b>Preventivo separato<br><span>(es. cambio layout, restyling completo, ecc.)</span></div>
 <div><b>Nuove pagine o funzionalità</b>Preventivo separato<br><span>(es. blog, e-commerce, prenotazioni, ecc.)</span></div>
 <div><b>Prezzo varia in base al dominio scelto</b></div>
@@ -188,6 +217,70 @@ footer p{margin:6px 0;opacity:.8}
 <p>Scrivici per scegliere il pacchetto più adatto alla tua attività.</p>
 </div>
 </footer>
+ 
+<script>
+(function(){
+var EMAIL=""; // inserisci qui la tua email per far aprire il client di posta
+var P={
+starter:{n:"STARTER",b:"",m:50,a:100,nfc:20,lim:2,cls:"",tag:"Il tuo punto di partenza online.",f:["Sito vetrina","Solo il logo","Numero di telefono della sede","Orari","Dove trovarci","Piccole manutenzioni senza possibilità di aggiunta."]},
+business:{n:"BUSINESS",m:70,a:200,nfc:15,lim:4,cls:"b",tag:"Più contenuti, più valore.",f:["Sito multi pagina","Fotografie","Menù","Contatti","Numero di telefono della sede","Orari","Dove trovarci","Profili social","Possibilità di fare piccole aggiunte come ad esempio promozioni o auguri di buona Pasqua ecc."]},
+plus:{n:"BUSINESS PLUS",m:100,a:300,nfc:0,lim:6,cls:"p",tag:"Tutto quello che ti serve. E anche di più.",f:["Tutto il pacchetto Business + la sezione LAVORA CON NOI","Menù digitale con codice QR da mettere su ogni tavolo.","Possibilità di fare modifiche al sito anche di stile (Halloween, Natale ecc.). Attenzione: deve rimanere invariata però la struttura inizialmente concordata.","Gestione online della chiusura cassa per avere una email con le varie chiusure."]},
+none:{n:"Solo NFC card",m:0,a:0,nfc:25}
+};
+var sel="business",qty=0,$=function(i){return document.getElementById(i)};
+var eur=function(v){return v.toLocaleString("it-IT")+"€"};
+function nfcCost(k,q){var p=P[k];if(k==="plus")return Math.max(q-1,0)*25;return q*p.nfc}
+// piani
+$("plans").innerHTML=["starter","business","plus"].map(function(k){var p=P[k];
+return '<article class="plan '+p.cls+'" data-k="'+k+'"><h3>SITO <b>'+p.n+'</b></h3><p class="tag">'+p.tag+'</p><div class="price">'+p.m+'<small>€</small></div><div class="mese">al mese</div><div class="act">+ attivazione di soli <b>'+p.a+'€</b></div><hr><ul>'+p.f.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><div class="limit">Massimo '+p.lim+' richieste al mese</div>'+(k==="plus"?'<div class="nfc gift"><span>NFC CARD<br>IN REGALO 🎁</span></div>':'<div class="nfc"><span>NFC CARD</span><b>'+p.nfc+'€</b></div>')+'<button class="btn pick" type="button" data-k="'+k+'">Scegli '+p.n.toLowerCase()+'</button></article>'}).join("");
+// opzioni
+$("opts").innerHTML=["starter","business","plus","none"].map(function(k){var p=P[k];
+return '<button type="button" class="opt" role="radio" data-k="'+k+'"><span>'+(k==="none"?p.n:"Sito "+p.n)+'</span><small>'+(k==="none"?"25€ a card":p.m+"€/mese + "+p.a+"€")+'</small></button>'}).join("");
+function render(){
+var p=P[sel],n=nfcCost(sel,qty),now=p.a+n+p.m,y=p.a+n+12*p.m;
+document.querySelectorAll(".opt").forEach(function(o){o.setAttribute("aria-checked",o.dataset.k===sel)});
+document.querySelectorAll(".plan").forEach(function(o){o.classList.toggle("sel",o.dataset.k===sel)});
+$("qty").textContent=qty;
+$("sM").textContent=p.m?eur(p.m):"–";
+$("sA").textContent=p.a?eur(p.a):"–";
+$("sN").textContent=qty?(n?eur(n):"in regalo 🎁"):"–";
+$("sNow").textContent=eur(sel==="none"?n:now);
+$("sY").textContent=eur(sel==="none"?n:y);
+}
+function summary(){
+var p=P[sel],n=nfcCost(sel,qty),t="Richiesta preventivo\nNome: "+($("fn").value||"-")+"\nAttività: "+($("fa").value||"-")+"\nPacchetto: "+(sel==="none"?"Solo NFC card":"Sito "+p.n)+"\n";
+if(p.m)t+="Canone: "+eur(p.m)+"/mese\nAttivazione: "+eur(p.a)+"\n";
+t+="NFC card: "+qty+" ("+(n?eur(n):"in regalo")+")\nStima primo anno: "+$("sY").textContent+" (dominio escluso)";return t}
+function say(s){$("msg").textContent=s;setTimeout(function(){$("msg").textContent=""},3500)}
+document.addEventListener("click",function(e){
+var b=e.target.closest("[data-k]");
+if(b){sel=b.dataset.k;if(sel==="plus"&&qty===0)qty=1;render();if(b.classList.contains("pick"))$("preventivo").scrollIntoView({behavior:"smooth"})}});
+$("minus").onclick=function(){if(qty>0){qty--;render()}};
+$("plus").onclick=function(){if(qty<20){qty++;render()}};
+$("copy").onclick=function(){var t=summary();
+try{navigator.clipboard.writeText(t).then(function(){say("Riepilogo copiato ✓")},function(){say("Copia non disponibile")})}catch(x){say("Copia non disponibile")}};
+$("send").onclick=function(){
+if(!$("fn").value.trim()){say("Inserisci il tuo nome");$("fn").focus();return}
+if(!EMAIL){var t=summary();try{navigator.clipboard.writeText(t)}catch(x){}say("Riepilogo pronto: incollalo in un messaggio ✓");return}
+location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Richiesta preventivo sito")+"&body="+encodeURIComponent(summary())};
+// NFC demo
+var tapped=false;
+$("nfcDemo").onclick=function(){if(tapped)return;tapped=true;var s=$("nfcStars").querySelectorAll("i"),t=$("nfcTxt");
+t.textContent="Lettura in corso…";
+s.forEach(function(el,i){setTimeout(function(){el.classList.add("on")},400+i*220)});
+setTimeout(function(){t.textContent="Grazie per la recensione! ★";},1700);
+setTimeout(function(){s.forEach(function(el){el.classList.remove("on")});t.textContent="Tocca la card per provarla";tapped=false},4200)};
+// stili hero
+document.querySelectorAll(".themes button").forEach(function(b){b.onclick=function(){document.querySelectorAll("[data-scr]").forEach(function(s){s.style.filter="hue-rotate("+b.dataset.h+"deg)"})}});
+// tema
+function theme(v){document.documentElement.setAttribute("data-theme",v)}
+try{var st=localStorage.getItem("tema");if(st)theme(st)}catch(x){}
+$("theme").onclick=function(){var dark=document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);var v=dark?"light":"dark";theme(v);try{localStorage.setItem("tema",v)}catch(x){}};
+// reveal
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll(".rv").forEach(function(r){io.observe(r)})}else document.querySelectorAll(".rv").forEach(function(r){r.classList.add("in")});
+render();
+})();
+</script>
 </body>
 </html>
  
