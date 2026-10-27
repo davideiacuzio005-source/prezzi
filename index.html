@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il tuo sito web su misura</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Caveat:wght@500&display=swap">
+<style>
+:root{--bg:#f6f3ee;--ink:#17201d;--muted:#5d6762;--forest:#1f3a32;--gold:#e8c796;--gold-d:#8a6a34;--c1:#f1efea;--c2:#f1e8d8;--c3:#e9ede6;--chip:#e6dccb;--line:#d9d3c7;--hero:#14201c;--hero-ink:#fff;--sage:#b9c9b0;--tick:#2f4d42;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1714;--ink:#eef0ec;--muted:#a3aea8;--forest:#2a4d42;--gold-d:#e8c796;--c1:#18231f;--c2:#211f18;--c3:#1b261f;--chip:#2c2a21;--line:#2c3a34;--hero:#0b1210;--tick:#9fc3b2;--sage:#40594a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Plus Jakarta Sans",system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.hero{background:var(--hero);color:var(--hero-ink);padding:56px 0 90px;border-radius:0 0 50% 50%/0 0 40px 40px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:36px;grid-template-columns:1.1fr .9fr;align-items:center}
+.kicker{letter-spacing:.14em;text-transform:uppercase;font-size:14px;opacity:.8;margin:0 0 10px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1;margin:0;font-weight:800;letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--gold);display:block}
+.sub{font-size:clamp(18px,2.4vw,24px);margin:18px 0 0;font-weight:500}
+.rule{width:60px;height:2px;background:var(--gold);margin:26px 0}
+.btn{display:inline-block;background:var(--gold);color:#1b1a14;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-d);outline-offset:3px}
+.mock{position:relative;min-height:290px}
+.laptop{background:#0d0d0d;border:6px solid #2a2a2a;border-radius:12px;aspect-ratio:16/10;overflow:hidden;position:relative;width:100%}
+.laptop::after{content:"";position:absolute;left:-8%;right:-8%;bottom:-18px;height:12px;background:#9a9a9a;border-radius:0 0 14px 14px}
+.scr{height:100%;padding:12%;background:radial-gradient(circle at 80% 60%,#c1442a 0 16%,#e2a13c 17% 24%,#3a2a1a 25% 100%);color:#fff;font-weight:700;font-size:clamp(12px,2vw,20px);line-height:1.2}
+.scr span{display:inline-block;margin-top:10px;font-size:11px;background:var(--gold);color:#222;padding:4px 10px;border-radius:99px}
+.phone{position:absolute;right:-4px;bottom:-30px;width:28%;aspect-ratio:9/18;background:#0d0d0d;border:4px solid #2a2a2a;border-radius:16px;overflow:hidden}
+.phone .scr{padding:12% 10%;font-size:clamp(8px,1.2vw,12px)}
+section{padding:56px 0}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;letter-spacing:-.02em;line-height:1.1}
+.lead{color:var(--muted);margin:0 0 32px;max-width:60ch}
+.plans{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+.plan{border-radius:26px;padding:28px 24px;display:flex;flex-direction:column;background:var(--c1)}
+.plan.b{background:var(--c2)}.plan.p{background:var(--c3)}
+.plan h3{font-size:26px;margin:0;font-weight:500;letter-spacing:-.01em}.plan h3 b{font-weight:800}
+.tag{color:var(--muted);margin:4px 0 18px}
+.price{font-size:68px;font-weight:800;line-height:1;letter-spacing:-.04em}
+.price small{font-size:34px}
+.mese{margin:2px 0 16px;font-size:18px}
+.act{background:var(--chip);border-radius:999px;padding:9px 16px;font-size:15px;align-self:flex-start}
+.plan hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.plan ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px;flex:1;align-content:start}
+.plan li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px}
+.plan li::before{content:"";width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--tick) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.limit{background:var(--chip);border-radius:16px;padding:14px 16px;margin-bottom:12px;font-weight:500}
+.nfc{border-radius:16px;padding:16px 18px;background:var(--forest);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.nfc.gift{background:var(--sage);color:var(--ink)}
+.nfc b{font-size:30px;font-weight:800}
+.nfc span{font-weight:700;font-size:14px;letter-spacing:.04em}
+.review{background:var(--forest);color:#fff;border-radius:30px;padding:40px 28px;display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:center}
+.review h2{color:#fff}
+.review p{opacity:.88;margin:10px 0}
+.stars{color:#f5c04a;font-size:30px;letter-spacing:4px}
+.cardviz{background:linear-gradient(135deg,#0e1b17,#24493e);border:1px solid rgba(255,255,255,.2);border-radius:20px;aspect-ratio:1.6;max-width:340px;justify-self:center;width:100%;padding:22px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg)}
+.cardviz div{font-size:13px;opacity:.85}
+.cardviz strong{font-size:22px}
+.price25{display:inline-block;margin-top:8px;background:var(--gold);color:#1b1a14;border-radius:999px;padding:8px 18px;font-weight:800}
+.extras{display:grid;gap:0;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.extras div{padding:24px 20px 0 0}
+.extras div+div{padding-left:20px;border-left:1px solid var(--line)}
+.extras b{display:block}
+.extras span{color:var(--muted);font-size:14px}
+footer{background:var(--hero);color:#fff;border-radius:50% 50% 0 0/40px 40px 0 0;padding:64px 0 40px;text-align:center}
+.sig{font-family:"Caveat",cursive,serif;font-size:clamp(30px,5vw,46px);margin:0 0 22px;color:var(--gold)}
+footer p{margin:6px 0;opacity:.8}
+@media(max-width:860px){
+.hero .wrap,.review{grid-template-columns:1fr}
+.plans{grid-template-columns:1fr}
+.extras{grid-template-columns:1fr}
+.extras div+div{border-left:0;border-top:1px solid var(--line);padding-left:0;margin-top:20px}
+.mock{margin-bottom:30px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="wrap">
+<div>
+<p class="kicker">Creazione siti web</p>
+<h1>Il tuo sito web <em>su misura</em></h1>
+<p class="sub">Più visibilità, più clienti, più opportunità.</p>
+<div class="rule"></div>
+<p style="margin:0 0 26px;max-width:34ch">Scegli il pacchetto più adatto alla tua attività e porta il tuo locale online!</p>
+<a class="btn" href="#pacchetti">Scopri i pacchetti</a>
+</div>
+<div class="mock" aria-hidden="true">
+<div class="laptop"><div class="scr">La buona pizza<br>è sempre una<br>buona idea.<br><span>Scopri il menù</span></div></div>
+<div class="phone"><div class="scr">La buona pizza è sempre una buona idea.</div></div>
+</div>
+</div>
+</header>
+ 
+<main>
+<section id="pacchetti">
+<div class="wrap">
+<h2>Scegli il tuo pacchetto</h2>
+<p class="lead">Canone mensile semplice, con un piccolo costo di attivazione una tantum.</p>
+<div class="plans">
+ 
+<article class="plan">
+<h3>SITO <b>STARTER</b></h3>
+<p class="tag">Il tuo punto di partenza online.</p>
+<div class="price">30<small>€</small></div>
+<div class="mese">al mese</div>
+<div class="act">+ attivazione di soli <b>50€</b></div>
+<hr>
+<ul>
+<li>Sito vetrina</li><li>Solo il logo</li><li>Numero di telefono della sede</li><li>Orari</li><li>Dove trovarci</li><li>Piccole manutenzioni senza possibilità di aggiunta.</li>
+</ul>
+<div class="limit">Massimo 2 richieste al mese</div>
+<div class="nfc"><span>NFC CARD</span><b>20€</b></div>
+</article>
+ 
+<article class="plan b">
+<h3>SITO <b>BUSINESS</b></h3>
+<p class="tag">Più contenuti, più valore.</p>
+<div class="price">50<small>€</small></div>
+<div class="mese">al mese</div>
+<div class="act">+ attivazione di soli <b>100€</b></div>
+<hr>
+<ul>
+<li>Sito multi pagina</li><li>Fotografie</li><li>Menù</li><li>Contatti</li><li>Numero di telefono della sede</li><li>Orari</li><li>Dove trovarci</li><li>Profili social</li><li>Possibilità di fare piccole aggiunte come ad esempio promozioni o auguri di buona Pasqua ecc.</li>
+</ul>
+<div class="limit">Massimo 4 richieste al mese</div>
+<div class="nfc"><span>NFC CARD</span><b>5€</b></div>
+</article>
+ 
+<article class="plan p">
+<h3>SITO <b>BUSINESS PLUS</b></h3>
+<p class="tag">Tutto quello che ti serve. E anche di più.</p>
+<div class="price">70<small>€</small></div>
+<div class="mese">al mese</div>
+<div class="act">+ attivazione di soli <b>150€</b></div>
+<hr>
+<ul>
+<li>Tutto il pacchetto Business + la sezione LAVORA CON NOI</li>
+<li>Menù digitale con codice QR da mettere su ogni tavolo.</li>
+<li>Possibilità di fare modifiche al sito anche di stile (Halloween, Natale ecc.). Attenzione: deve rimanere invariata però la struttura inizialmente concordata.</li>
+<li>Gestione online della chiusura cassa per avere una email con le varie chiusure.</li>
+</ul>
+<div class="limit">Massimo 6 richieste al mese</div>
+<div class="nfc gift"><span>NFC CARD<br>IN REGALO 🎁</span></div>
+</article>
+ 
+</div>
+</div>
+</section>
+ 
+<section style="padding-top:0">
+<div class="wrap">
+<div class="review">
+<div>
+<div class="stars" aria-label="5 stelle">★★★★★</div>
+<h2>La NFC card che raccoglie recensioni</h2>
+<p>I tuoi clienti avvicinano il telefono alla card e lasciano da soli la recensione Google a 5 stelle. Nessun passaggio in più: più recensioni, più fiducia, più clienti.</p>
+<p>Disponibile anche da sola.</p>
+<span class="price25">NFC card da sola: 25€</span>
+</div>
+<div class="cardviz" aria-hidden="true">
+<div>Lasciaci una recensione</div>
+<strong>★★★★★ · Google</strong>
+<div>Avvicina il telefono</div>
+</div>
+</div>
+</div>
+</section>
+ 
+<section style="padding-top:0">
+<div class="wrap">
+<div class="extras">
+<div><b>Modifiche strutturali</b>Preventivo separato<br><span>(es. cambio layout, restyling completo, ecc.)</span></div>
+<div><b>Nuove pagine o funzionalità</b>Preventivo separato<br><span>(es. blog, e-commerce, prenotazioni, ecc.)</span></div>
+<div><b>Prezzo varia in base al dominio scelto</b></div>
+</div>
+</div>
+</section>
+</main>
+ 
+<footer>
+<div class="wrap">
+<p class="sig">Il tuo sito, la tua identità online.</p>
+<p>Scrivici per scegliere il pacchetto più adatto alla tua attività.</p>
+</div>
+</footer>
+</body>
+</html>
+ 
